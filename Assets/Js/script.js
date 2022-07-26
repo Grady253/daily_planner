@@ -1,26 +1,42 @@
-//These are the variables I'll be calling in my code below.
+//setting a const declaring to the date.
+const today = moment(); //This is displaying the current day.
 
-var past = $("#past");
-var present =$("#present");
-var future = $("#future");
-var today = moment();//This is displaying the current day.
+const hour = moment().hour(); //Determines the hour 
 
-$("#currentDay").text(today.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+$("#currentDay").text(today.format("dddd, MMMM Do YYYY!"));
 
-//This for loop is to count the time
-for(var i =9; i <=18; i++){
-    if (i > today){
-        document.getElementById(".col-md-10") = past;
-    };
-    
-    if (i === today){
-        document.getElementById(".col-md-10") = present;
-    };
+function timecycle(){
+  for (let i = 9; i <= 17; i++) {
 
-    if(i < today){
-        document.getElementById(".col-md-10") = future;
-    };
+    const info = "";
 
+    const key = "hour-"+i;
 
+    const template = ` <div id="hour-" class="row time-block">
+    <div class="col-md-1 hour">${i}</div>
+    <textarea class="col-md-10 description past present future">${info}</textarea>
+    <button type="button" class="saveBtn">${i}</button>
+    </div>`;
 
-}
+    // if (i < hour){
+    //   $('row time-block').addClass('past');
+    // } else if (i == hour){
+    //   $('row time-block').addClass('present');
+    // } else{
+    //   $('row time-block').addClass('future');
+    //   console.log("it works");
+    // };
+  }
+
+};
+
+// function colorChange(){
+// if (i < hour){
+//   $('row time-block').addClass('past');
+// } else if (i === hour){
+//   $('row time-block').addClass('present');
+// } else{
+//   $('row time-block').addClass('future');
+//   console.log("it works");
+// };
+// };
