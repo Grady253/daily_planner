@@ -45,7 +45,7 @@ function getData(){
   console.log(storageData);
   $(".description").each(function(){
     const time = $(this).parent().attr("id");
-    for (let i = 0; i < storageData.length; i++) {
+    for (let i = 0; i < storageData; i++) {
       const storageEl= storageData[i];
       if(time == storageEl.time){
         $(this).text(storageEl.value)
