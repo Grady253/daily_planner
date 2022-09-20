@@ -37,12 +37,12 @@ function createRows(){
     element.append(hourEl).append(textArea).append(saveBtn);
     element.appendTo(containEl);
   }
-  
 }
 
 //This function is retreving the data from the local storage.
 function getData(){
-  const storageData =  JSON.parse(window.localStorage.getItem("data"))
+  const storageData =  JSON.parse(window.localStorage.getItem("data"));
+  console.log(storageData);
   $(".description").each(function(){
     const time = $(this).parent().attr("id");
     for (let i = 0; i < storageData.length; i++) {
@@ -53,6 +53,7 @@ function getData(){
     }
   })
 }
+
 //The code below is calling each of the function 
 createRows();
 
